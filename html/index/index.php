@@ -337,7 +337,7 @@ $("#recojo").hide();
 
 
 
-                             <input   type="submit"  value='ENVIAR PEDIDO' onclick="goValidaciones()" class="btn btn-primary btn-lg" />
+                          <center>   <input   type="submit"  value='ENVIAR PEDIDO' onclick="goValidaciones()" class="btn btn-primary btn-lg" /></center>
 
 </div>
                         </div>

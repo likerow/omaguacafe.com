@@ -8,7 +8,7 @@ function PedidosDelDia($precio,$nombre,$telefono,$tiempo,$horario,$direccion,$em
       <p style="font-size:17px;">Solicitud</p>
   	<p>El día '. date('d/m/Y', time()).' se ha generado un nuevo pedido. <br /> lo siguiente: .</p>
   	<p style="padding:15px;background-color:#ECF8FF;">
-    <strong> <h4> ENSALADA DEL DIA </h4></strong>
+    <strong> <h4> ENSALADA DEL DIA! </h4></strong>
     <strong> <h4> Datos </h4></strong>
   		Nombre    :'.$nombre.'  <br>
       Whatsapp  :'.$telefono.' <br>

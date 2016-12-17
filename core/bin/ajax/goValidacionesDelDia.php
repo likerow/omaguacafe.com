@@ -38,7 +38,9 @@ if(($_POST['direccion']!='' && $_POST['empresa']!='' && $_POST['oficina']!='' &&
 
   $mail->setFrom(PHPMAILER_USER, APP_TITLE);
 
-  $mail->addAddress('keyl.qsy@gmail.com');     // Add a recipient puede llegar a tantac como desees
+  $mail->addAddress('ocusi@cafeomagua.com'); 
+  $mail->addAddress('keyl.qsy@gmail.com');
+      // Add a recipient puede llegar a tantac como desees
 
 
   $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments archivo adjunto
