@@ -3,7 +3,7 @@ function goValidaciones(){
 if(document.getElementById("rbtnSBPalta").checked){
 
 //ensalada del dia
-  var connect, form, response, result,telefono,nombre,monto;
+  var connect, form, response, result,telefono,nombre,monto,hora_aprox='';
 
 
   telefono=document.getElementById('Whatsapp').value;
@@ -19,7 +19,7 @@ for(var i=0;i<gentrega.length;i++) {
   if(entrega!=''){
 
     if(entrega=='Recoger'){
-        var hora_aprox='';
+
           hora_aprox=document.getElementById('hora_aprox').value;
 
     document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
@@ -269,7 +269,7 @@ if(carbohidratos!=''){
         result='<div class="alert alert-dismissible alert-warning">';
       result+='<button type="button" class="close" data-dismiss="alert">&times;</button>';
       result+='<h4>ELIGE ALMENOS UNA VINAGRETA</h4>';
-      result+='<p <strong>Ingrese su numero de whatsapp</strong></p>';
+      result+='<p <strong>Puede elegir mas de 1 vinagreta</strong></p>';
       result+='</div>';
 
 
@@ -302,7 +302,7 @@ if(carbohidratos!=''){
   result='<div class="alert alert-dismissible alert-warning">';
 result+='<button type="button" class="close" data-dismiss="alert">&times;</button>';
 result+='<h4>ELIGE ALMENOS UN CARBOHIDRATO</h4>';
-result+='<p <strong>Eleg</strong></p>';
+result+='<p <strong></strong></p>';
 result+='</div>';
 
 
@@ -314,7 +314,7 @@ document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
 result='<div class="alert alert-dismissible alert-warning">';
 result+='<button type="button" class="close" data-dismiss="alert">&times;</button>';
 result+='<h4>ELIGE ALMENOS UNA BASE</h4>';
-result+='<p <strong>Ingrese su numero de whatsapp</strong></p>';
+result+='<p <strong></strong></p>';
 result+='</div>';
 
 
@@ -325,7 +325,7 @@ document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
 }
 
 }
-
+/*
   function goRecoger(){
 
   result='<label for="ejemplo_email_1"> Hora aproximada de recojo</label>'
@@ -337,7 +337,7 @@ document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
   document.getElementById('_ENTREGA_').innerHTML=result ;
   }
 
-  function goDelivery(){
+ function goDelivery(){
     result='<label for="ejemplo_email_1">Hora de entrega :                 </label>'
     result+='  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:00 ">12:00 </label>'
   result+='  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:30 ">12:30</label>'
@@ -354,3 +354,4 @@ document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
 
             document.getElementById('_ENTREGA_').innerHTML=result ;
     }
+*/

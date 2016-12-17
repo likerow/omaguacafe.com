@@ -18,12 +18,12 @@
 <body>
 
 
-                             <!-- Portfolio Modal PedidoSaladBar -->
+
     <div  id="portfolioSaladBar" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
 
 
-            <div class="container">
+          <center>  <div class="container">
 
 
                 <div class="row">
@@ -36,7 +36,8 @@
 
                           <div id="_AJAX_CUERPO_">
                             <!-- Project Details Go Here -->
-                            <h3>Arma tu ensalada<h3>
+<h3>Arma tu ensalada</h3>
+
 
                             <p class="item-intro text-muted">Todas las ensaladas van acompañadas del refresco</p>
 
@@ -48,15 +49,14 @@
 
 
 
-<h4>Eleccion rapida </h4>
+<h4>Eleccion rápida </h4>
 <div class="  btn-group" data-toggle="buttons">
 
   <div class="row">
-
-                                <div class="col-md-6">
-                                <p class="item-intro"><span GroupName="GrupoIngredienteSB"><input id="rbtnSBPalta" type="checkbox" name="rbtnSBPalta" onClick="godelDia()" value='ensalada_del_dia'/><label for="rbtnSBPalta">Ensalada del dia</label></span></p>
-                                </div>
-
+                        <div class=" col-md-6 ">
+                                <label class="btn btn-selected ">
+                                <p class="item-intro"><input type="checkbox" id="rbtnSBPalta" name="rbtnSBPalta" onClick="godelDia()" value='ensalada_del_dia' >Ensalada del dia
+                                </p></label></div>
 
 </div>
 <script>
@@ -77,12 +77,12 @@ $(document).ready(function(){
 
 <div class="  btn-group" data-toggle="buttons">
   <form name="formbase">
-  <div class=" col-md-4 ">
+  <div class=" col-md-6 ">
   <label class="btn btn-selected ">
   <p class="item-intro"><input type="checkbox" name="GrupoBase[]" id="ensalada" autocomplete="off" value="Frescas(lechuga, tomate,pepinillo)" > Frescas<br>(lechuga, tomate,<br>pepinillo)
   </p></label></div>
 
-  <div class=" col-md-4 ">
+  <div class=" col-md-6 ">
   <label class="btn btn-selected ">
   <p class="item-intro"><input type="checkbox" name="GrupoBase[]" id="cocidas" autocomplete="off" value=" Cocidas" > Cocidas
   </p></label></div>
@@ -155,13 +155,13 @@ $(document).ready(function(){
                              <p class="text-radioButton text-titulo"></p>
                              <h4>Proteínas</h4>
                              <div class="btn-group" data-toggle="buttons">
-                                 <div class=" col-md-4 ">
+                                 <div class=" col-md-6">
                                <label class="btn btn-selected ">
-                                 <p class="item-intro"><input type="radio" name="GrupoProteina"  id="atun" value="Atun" autocomplete="off" > Atun(Conserva)
+                                 <p class="item-intro"><input type="radio" name="GrupoProteina"  id="atun" value="Atun" autocomplete="off" > Atún(Conserva)
                                </p></label></div>
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                              <label class="btn btn-selected ">
-                               <p class="item-intro"><input type="radio" name="GrupoProteina" id="pollo" autocomplete="off" value="Pollo a la planta" > Polloa la placha
+                               <p class="item-intro"><input type="radio" name="GrupoProteina" id="pollo" autocomplete="off" value="Pollo a la plancha" > Pollo a la plancha
                              </p></label></div>
 
 
@@ -171,12 +171,12 @@ $(document).ready(function(){
                              <p class="text-radioButton text-titulo"></p>
 <h4>Adicional (+S/. 1,00)</H4>
                              <div class="  btn-group" data-toggle="buttons">
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoAdicional[]" id="checkHuevo" autocomplete="off" value="Huevo" > Huevo
                                </p></label></div>
 
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoAdicional[]" id="checkQueso" autocomplete="off" value="Queso fresco" >  Queso Fresco
                                </p></label></div>
@@ -266,14 +266,62 @@ $(document).ready(function(){
 
                                            <label for="ejemplo_email_1"> Introducir número de Whatsapp</label>
                                            <input type="email" class="form-control" id="Whatsapp"
-                                                  placeholder="Introduce tu numero de telefono" <?php if(isset($_COOKIE['telefonoOmagua'])){echo$_COOKIE['telefonoOmagua'];}?> >
-
+                                                  placeholder="Introduce tu numero de telefono" value=<?php if(isset($_COOKIE['telefonoOmagua'])){echo$_COOKIE['telefonoOmagua'];}?> >
+<br>
                                                   <label for="ejemplo_email_1">Forma de entrega :                 </label>
-                                                  <label class="radio-inline" onclick="goRecoger()"><input type="radio" id="Recoger" name="tipoentrega" value="Recoger" >Recoger</label>
-                                                  <label class="radio-inline"onclick="goDelivery()"><input type="radio" id="Delivery"name="tipoentrega" value="Delivery">Delivery</label><br>
+                                                  <label class="radio-inline" ><input type="radio"  class="forma" id="Recoger" name="tipoentrega" value="Recoger" >Recoger</label>
+                                                  <label class="radio-inline"><input type="radio"  class="forma" id="Delivery" name="tipoentrega" value="Delivery">Delivery</label><br>
+<br>
                                                   <div id="_ENTREGA_"></div>
 
-                                                  <label > Precio total : <p id="precio"><p id="_+precio1"></p><p id="_+precio0"></p></p></label><br>
+                                                  <script>
+
+
+
+                                                    $(document).ready(function(){
+$("#delivery").hide();$("#recojo").hide();
+        $("#Recoger").click(function() {
+            if($("#Recoger").is(':checked')) {
+                  $("#recojo").show();
+                    $("#delivery").hide();
+            }
+        });
+
+    });
+
+    $(document).ready(function(){
+$("#Delivery").click(function() {
+if($("#Delivery").is(':checked')) {
+$("#delivery").show();
+$("#recojo").hide();
+}
+});
+
+});
+
+
+                                                  </script>
+<div id='recojo'>
+  <label for="ejemplo_email_1"> Hora aproximada de recojo</label>
+                                    <input type="email" class="form-control" id="hora_aprox" placeholder="Hora"  valu=<?php if(isset($_COOKIE['hora_aproxOmagua'])){echo$_COOKIE['hora_aproxOmagua'];}?>>
+</div>
+<div id='delivery'>
+  <label for="ejemplo_email_1">Hora de entrega :                 </label>
+  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:00 ">12:00 </label>
+  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:30 ">12:30</label>
+  <label class="radio-inline"><input type="radio" name="hora_deli" value="1:00 ">1:00</label><br>
+  <label for="ejemplo_email_1"> Direccion</label>
+  <input type="email" class="form-control" id="direccion"
+  placeholder="Direccion" value=<?php if(isset($_COOKIE['direccionOmagua'])){echo$_COOKIE['direccionOmagua'];}?> >
+   <label for="ejemplo_email_1"> Empresa</label>
+    <input type="email" class="form-control" id="empresa"
+    placeholder="Empresa"  value=<?php if(isset($_COOKIE['empresaOmagua'])){echo$_COOKIE['empresaOmagua'];}?>>
+     <label for="ejemplo_email_1"> Oficina</label>
+   <input type="email" class="form-control" id="oficina"
+      placeholder="Oficina" value=<?php if(isset($_COOKIE['oficinaOmagua'])){echo$_COOKIE['oficinaOmagua'];}?>>
+
+</div>
+                                                  <br><label > Precio total : <div id="precio"></div><div id="_+precio0"></div><div id="_+precio1"></div></label><br>
 
                                                   <label > Monto con el que se pagará</label>
                                                   <input type="email" class="form-control" id="monto"
@@ -292,7 +340,7 @@ $(document).ready(function(){
 
 
 
-                             <input   type="submit"  id="btnPedirSaladBar" onclick="goValidaciones()" class="btn btn-primary btn-lg" />
+                             <input   type="submit"  value='ENVIAR PEDIDO' onclick="goValidaciones()" class="btn btn-primary btn-lg" />
 
 </div>
                         </div>
@@ -301,13 +349,12 @@ $(document).ready(function(){
             </div>
         </div>
     </div>
-
+</center>
 </div>
 
 </div>
 
 <script src="views/app/js/validaciones.js"></script>
-<script src="views/app/js/precios.js"></script>
 <script src="views/app/js/validacionesRapida.js"></script>
 
 
@@ -315,3 +362,4 @@ $(document).ready(function(){
 
 
 </body>
+</html>

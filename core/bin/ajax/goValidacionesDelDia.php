@@ -3,17 +3,17 @@
 
 $HTML='';
 if( $_POST['telefono']!='' && $_POST['nombre']){
-if(($_POST['direccion']!='' && $_POST['empresa']!='' && $_POST['oficina']!='' && $_POST['hora_deli']!='') && ($_POST['hora_aprox']!='') && $_POST['monto']!=''){
 
-  if($_POST['hora_aprox']=''){
+if(($_POST['direccion']!='' && $_POST['empresa']!='' && $_POST['oficina']!='' && $_POST['hora_deli']!='' && $_POST['monto']!='') || ($_POST['hora_aprox']!='' && $_POST['monto']!='') ){
+
+
 
     setcookie("direccionOmagua",$_POST['direccion'], mktime(). time()+60*60*24*30 );
     setcookie("empresaOmagua",$_POST['empresa'], mktime(). time()+60*60*24*30 );
     setcookie("oficinaOmagua",$_POST['oficina'], mktime(). time()+60*60*24*30 );
-  }else{
-
     setcookie("hora_aproxOmagua",$_POST['hora_aprox'], mktime(). time()+60*60*24*30 );
-  }
+    setcookie("nombreOmagua",$_POST['nombre'], mktime().time()+60*60*24*30 );
+    setcookie("telefonoOmagua",$_POST['telefono'], mktime().time()+60*60*24*30 );
 
 
   $mail = new PHPMailer;
