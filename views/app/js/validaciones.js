@@ -325,33 +325,3 @@ document.getElementById('_AJAX_VALIDACIONES_').innerHTML=result ;
 }
 
 }
-/*
-  function goRecoger(){
-
-  result='<label for="ejemplo_email_1"> Hora aproximada de recojo</label>'
-  result+='<input type="email" class="form-control" id="hora_aprox"'
-    result+='  placeholder="Hora" >'
-
-
-
-  document.getElementById('_ENTREGA_').innerHTML=result ;
-  }
-
- function goDelivery(){
-    result='<label for="ejemplo_email_1">Hora de entrega :                 </label>'
-    result+='  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:00 ">12:00 </label>'
-  result+='  <label class="radio-inline"><input type="radio" name="hora_deli" value="12:30 ">12:30</label>'
-  result+='  <label class="radio-inline"><input type="radio" name="hora_deli" value="1:00 ">1:00</label><br>'
-  result+='   <label for="ejemplo_email_1"> Direccion</label>'
-  result+='  <input type="email" class="form-control" id="direccion"'
-    result+='       placeholder="Direccion" >'
-      result+='     <label for="ejemplo_email_1"> Empresa</label>'
-      result+='    <input type="email" class="form-control" id="empresa"'
-      result+='           placeholder="Empresa"  >'
-    result+='             <label for="ejemplo_email_1"> Oficina</label>'
-      result+='          <input type="email" class="form-control" id="oficina"'
-      result+='                 placeholder="Oficina" >'
-
-            document.getElementById('_ENTREGA_').innerHTML=result ;
-    }
-*/
