@@ -25,7 +25,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-8 col-lg-offset-2">
+                <center>      <div class="col-lg-8 col-lg-offset-2">
 
                         <div class="modal-body">
 
@@ -50,7 +50,7 @@
 <div class="  btn-group" data-toggle="buttons">
 
   <div class="row">
-                        <div class=" col-md-6 ">
+                        <div class=" col-md-12">
                                 <label class="btn btn-selected ">
                                 <p class="item-intro"><input type="checkbox" id="rbtnSBPalta" name="rbtnSBPalta" onClick="godelDia()" value='ensalada_del_dia' >Ensalada del dia
                                 </p></label></div>
@@ -58,11 +58,13 @@
 </div>
 <script>
 $(document).ready(function(){
-
-    $("#rbtnSBPalta").click(function() {
+  $("#ensaladas").hide();
+  $("#rbtnSBPalta").click(function() {
         if($("#rbtnSBPalta").is(':checked')) {
+          $("#ensaladas").show();
             document.getElementById("precio").innerHTML="S/. 12,00";
         } else {
+            $("#ensaladas").hide();
         document.getElementById("precio").innerHTML='';
         }
     });
@@ -74,12 +76,12 @@ $(document).ready(function(){
 
 <div class="  btn-group" data-toggle="buttons">
   <form name="formbase">
-  <div class=" col-md-6 ">
+  <div class=" col-md-4 ">
   <label class="btn btn-selected ">
   <p class="item-intro"><input type="checkbox" name="GrupoBase[]" id="ensalada" autocomplete="off" value="Frescas(lechuga, tomate,pepinillo)" > Frescas<br>(lechuga, tomate,<br>pepinillo)
   </p></label></div>
 
-  <div class=" col-md-6 ">
+  <div class=" col-md-4 ">
   <label class="btn btn-selected ">
   <p class="item-intro"><input type="checkbox" name="GrupoBase[]" id="cocidas" autocomplete="off" value=" Cocidas" > Cocidas
   </p></label></div>
@@ -88,6 +90,7 @@ $(document).ready(function(){
     <?php
     $fechaactual = getdate();
     $hoy=$fechaactual['wday'];
+
     if($hoy==3 || $hoy==1){
     echo'<div class=" col-md-4 ">
     <label class="btn btn-selected ">
@@ -228,20 +231,20 @@ $(document).ready(function(){
                              <p class="text-radioButton text-titulo"></p>
 <h4>Vinagretas</h4>
                              <div class="  btn-group" data-toggle="buttons">
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkPapa" autocomplete="off" value="Limon" > Limón
                                </p></label></div>
 
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkCamote" autocomplete="off" value="vinagreta" > Vinagreta
                                </p></label></div>
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkArroz" autocomplete="off" value=" Ají omagua" > Ají omagua
                                </p></label></div>
-                               <div class=" col-md-4 ">
+                               <div class=" col-md-6 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkArroz" autocomplete="off" value="Rocoto" > Rocoto
                                </p></label></div>
@@ -254,9 +257,70 @@ $(document).ready(function(){
 </div>
 
 </div>
-<p class="text-radioButton text-titulo"> </p>
+
+<div id='ensaladas'>
+<?php
+if($hoy==1){
+  echo '<div class="btn-group" data-toggle="buttons" >
+  <p class="text-radioButton text-titulo"> </p>
+  <div class="col-md-6">
+    <img src="views/app/imagenes/lunes.jpg" class="img-responsive" >
+  </div>
+  <div class="col-md-6" i>
+  <label for="ejemplo_email_1">SIEMPRE BABY<br> <br> - Tupuras acompañadas de espinaca <br> - Manzana <br> - Tomate<br> - Zanahora <br> - Palta<br> - Pimiento con pecana acaramelados <br> - Vinagreta de maracuyá</label>
+  </div>
+  </div>';
+}else if($hot==2){
+  echo'<div class="btn-group" data-toggle="buttons" >
+  <p class="text-radioButton text-titulo"> </p>
+  <div class="col-md-6">
+    <img src="views/app/imagenes/martes.jpg" class=" img-responsive">
+  </div>
+  <div class="col-md-6">
+  <label for="ejemplo_email_1">PURA VIDA<br> <br> - Berenjena <br> - Zuccini <br> - Vainitas<br> - Espárragos <br> - Shitake <br> - Pimientos frescos, tomate , alcahofa y mix de lechugas <br> - Reduccion de vino y chimicurri</label>
+  </div>
+  </div>';
+}else if($hot==3){
+  echo'<div class="btn-group" data-toggle="buttons" >
+  <p class="text-radioButton text-titulo"> </p>
+  <div class="col-md-6">
+    <img src="views/app/imagenes/miercoles.jpg" class="img-responsive" >
+  </div>
+  <div class="col-md-6">
+  <label for="ejemplo_email_1">ORIENTAL<br> <br> - Mix de lechugas <br> - Zanahoria <br> - Pimientos<br> - Pepinillo <br> - Mango <br> - Frejol chino acompañado de pechuga<br> plancha en salsa orienta <br> - Vinagreta de Rocoto</label>
+  </div>
+  </div>';
+}else if($hot==4){
+  echo'<div class="btn-group" data-toggle="buttons" >
+  <p class="text-radioButton text-titulo"> </p>
+  <div class="col-md-6">
+    <img src="views/app/imagenes/jueves.jpg" class="img-responsive" >
+  </div>
+
+  <div class="col-md-6">
+  <label for="ejemplo_email_1">MANCOREÑA<br> <br> - Mix de lechugas <br> - Tomate <br> - Papa<br> - Vainitas <br> - Aceitunas <br> - Cebolla acompañado de atún <br> - Vinagreta de alcaparra</label>
+  </div>
+  </div>';
+}else if($hot==5){
+  echo'<div class="btn-group" data-toggle="buttons" >
+  <p class="text-radioButton text-titulo"> </p>
+  <div class="col-md-6">
+    <img src="views/app/imagenes/viernes.jpg" class="img-responsive">
+  </div>
+
+  <div class="col-md-6">
+  <label for="ejemplo_email_1">OMAGUA CLÁSICA<br> <br> - Mix de lechugas <br> - Jamón inglés <br> - Pechuga a la plancha<br> - Queso fresco <br> - Zanahoria <br> - Cebolla, pimiento, tomate, aceituna y huevo <br> - Vinagreta Parmesana</label>
+  </div>
+  </div>';
+}
+?>
+</div>
+
+
+
 <h3>DATOS</h3>
                              <div class="form-group">
+
                              <label for="ejemplo_email_1"> Nombre</label>
                              <input type="email" class="form-control" id="nombre"
                                     placeholder="Introduce tu nombre" value=<?php if(isset($_COOKIE['nombreOmagua'])){echo$_COOKIE['nombreOmagua'];}?> >
@@ -307,9 +371,9 @@ $("#recojo").hide();
   <label class="radio-inline"><input type="radio" name="hora_deli" value="12:00 ">12:00 </label>
   <label class="radio-inline"><input type="radio" name="hora_deli" value="12:30 ">12:30</label>
   <label class="radio-inline"><input type="radio" name="hora_deli" value="1:00 ">1:00</label><br>
-  <label for="ejemplo_email_1"> Direccion</label>
+  <label for="ejemplo_email_1"> Dirección :</label>
   <input type="email" class="form-control" id="direccion"
-  placeholder="Direccion" value=<?php if(isset($_COOKIE['direccionOmagua'])){echo$_COOKIE['direccionOmagua'];}?> >
+  placeholder="Dirección" value=<?php if(isset($_COOKIE['direccionOmagua'])){echo$_COOKIE['direccionOmagua'];}?> >
    <label for="ejemplo_email_1"> Empresa</label>
     <input type="email" class="form-control" id="empresa"
     placeholder="Empresa"  value=<?php if(isset($_COOKIE['empresaOmagua'])){echo$_COOKIE['empresaOmagua'];}?>>

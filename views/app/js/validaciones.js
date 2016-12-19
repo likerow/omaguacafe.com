@@ -59,7 +59,7 @@ for(var i=0;i<gentrega.length;i++) {
 
     document.getElementById('_AJAX_VALIDACIONES_').innerHTML=connect.result;
 
-        document.getElementById('_AJAX_CUERPO_').innerHTML='<div class="alert alert-dismissible alert-success"><strong>Gracias por su compra<br></strong> En breves momentos estaremos comunicandonos con usted </div>' ;
+        document.getElementById('_AJAX_CUERPO_').innerHTML='<div class="alert alert-dismissible alert-success"><strong>Gracias por su compra<br></strong> En breves momentos estaremos comunicándonos con usted </div>' ;
 
             }else{
                document.getElementById('_AJAX_VALIDACIONES_').innerHTML=connect.responseText;
@@ -225,7 +225,7 @@ if(carbohidratos!=''){
 
           document.getElementById('_AJAX_VALIDACIONES_').innerHTML=connect.result;
 
-              document.getElementById('_AJAX_CUERPO_').innerHTML='<div class="alert alert-dismissible alert-success"><strong>Gracias por su compra<br></strong> En breves momentos estaremos comunicandonos con usted </div>' ;
+              document.getElementById('_AJAX_CUERPO_').innerHTML='<div class="alert alert-dismissible alert-success"><strong>Gracias por su compra<br></strong> En breves momentos estaremos comunicándonos con usted </div>' ;
 
                   }else{
                      document.getElementById('_AJAX_VALIDACIONES_').innerHTML=connect.responseText;
