@@ -29,13 +29,37 @@
 
                         <div class="modal-body">
 
-                          <div id="updSaladBar">
+                          <div >
 
                           <div id="_AJAX_CUERPO_">
                             <!-- Project Details Go Here -->
 <h3>Arma tu ensalada</h3>
 
+<?php
+ $fechaactual = getdate();
+  $hoy=$fechaactual['wday'];
+    $validahora='';
+    $validadia='';
+if($hoy==6 || $hoy==0){
+  echo'<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>ATENCIÓN</h4>
+  <p>Los pedidos se realizan de lunes a viernes</a>.</p>
+  </div>';
+  $validadia='no';
+}
 
+if(($fechaactual["hours"]==11 && $fechaactual["minutes"]>30) || $fechaactual["hours"]>=12 ){
+  echo'<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>ATENCIÓN</h4>
+  <p>Los pedidos se realizan antes de las 11:30</a>.</p>
+  </div>';
+  $validahora='no';
+}
+
+
+?>
                             <p class="item-intro text-muted">Todas las ensaladas van acompañadas del refresco</p>
 
 
@@ -88,8 +112,8 @@ $(document).ready(function(){
 
 
     <?php
-    $fechaactual = getdate();
-    $hoy=$fechaactual['wday'];
+
+
 
     if($hoy==3 || $hoy==1){
     echo'<div class=" col-md-4 ">
@@ -231,23 +255,20 @@ $(document).ready(function(){
                              <p class="text-radioButton text-titulo"></p>
 <h4>Vinagretas</h4>
                              <div class="  btn-group" data-toggle="buttons">
-                               <div class=" col-md-6 ">
+                               <div class=" col-md-4 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkPapa" autocomplete="off" value="Limon" > Limón
                                </p></label></div>
 
-                               <div class=" col-md-6 ">
+                               <div class=" col-md-4 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkCamote" autocomplete="off" value="vinagreta" > Vinagreta
                                </p></label></div>
-                               <div class=" col-md-6 ">
+                               <div class=" col-md-4 ">
                                <label class="btn btn-selected ">
                                <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkArroz" autocomplete="off" value=" Ají omagua" > Ají omagua
                                </p></label></div>
-                               <div class=" col-md-6 ">
-                               <label class="btn btn-selected ">
-                               <p class="item-intro"><input type="checkbox" name="GrupoVinagretas[]" id="checkArroz" autocomplete="off" value="Rocoto" > Rocoto
-                               </p></label></div>
+
 
                              </div>
 
@@ -260,52 +281,52 @@ $(document).ready(function(){
 
 <div id='ensaladas'>
 <?php
-if($hoy==1){
+if($hoy==3){
   echo '<div class="btn-group" data-toggle="buttons" >
   <p class="text-radioButton text-titulo"> </p>
   <div class="col-md-6">
-    <img src="views/app/imagenes/lunes.jpg" class="img-responsive" >
+    <img src="views/app/imagenes/miercoles.jpg" class="img-responsive" >
   </div>
   <div class="col-md-6" i>
   <label for="ejemplo_email_1">SIEMPRE BABY<br> <br> - Tupuras acompañadas de espinaca <br> - Manzana <br> - Tomate<br> - Zanahora <br> - Palta<br> - Pimiento con pecana acaramelados <br> - Vinagreta de maracuyá</label>
   </div>
   </div>';
-}else if($hot==2){
+}else if($hoy==4){
   echo'<div class="btn-group" data-toggle="buttons" >
   <p class="text-radioButton text-titulo"> </p>
   <div class="col-md-6">
-    <img src="views/app/imagenes/martes.jpg" class=" img-responsive">
+    <img src="views/app/imagenes/jueves.jpg" class=" img-responsive">
   </div>
   <div class="col-md-6">
   <label for="ejemplo_email_1">PURA VIDA<br> <br> - Berenjena <br> - Zuccini <br> - Vainitas<br> - Espárragos <br> - Shitake <br> - Pimientos frescos, tomate , alcahofa y mix de lechugas <br> - Reduccion de vino y chimicurri</label>
   </div>
   </div>';
-}else if($hot==3){
+}else if($hoy==5){
   echo'<div class="btn-group" data-toggle="buttons" >
   <p class="text-radioButton text-titulo"> </p>
   <div class="col-md-6">
-    <img src="views/app/imagenes/miercoles.jpg" class="img-responsive" >
+    <img src="views/app/imagenes/viernes.jpg" class="img-responsive" >
   </div>
   <div class="col-md-6">
   <label for="ejemplo_email_1">ORIENTAL<br> <br> - Mix de lechugas <br> - Zanahoria <br> - Pimientos<br> - Pepinillo <br> - Mango <br> - Frejol chino acompañado de pechuga<br> plancha en salsa orienta <br> - Vinagreta de Rocoto</label>
   </div>
   </div>';
-}else if($hot==4){
+}else if($hoy==1){
   echo'<div class="btn-group" data-toggle="buttons" >
   <p class="text-radioButton text-titulo"> </p>
   <div class="col-md-6">
-    <img src="views/app/imagenes/jueves.jpg" class="img-responsive" >
+    <img src="views/app/imagenes/lunes.jpg" class="img-responsive" >
   </div>
 
   <div class="col-md-6">
   <label for="ejemplo_email_1">MANCOREÑA<br> <br> - Mix de lechugas <br> - Tomate <br> - Papa<br> - Vainitas <br> - Aceitunas <br> - Cebolla acompañado de atún <br> - Vinagreta de alcaparra</label>
   </div>
   </div>';
-}else if($hot==5){
+}else if($hoy==2){
   echo'<div class="btn-group" data-toggle="buttons" >
   <p class="text-radioButton text-titulo"> </p>
   <div class="col-md-6">
-    <img src="views/app/imagenes/viernes.jpg" class="img-responsive">
+    <img src="views/app/imagenes/martes.jpg" class="img-responsive">
   </div>
 
   <div class="col-md-6">
@@ -400,8 +421,16 @@ $("#recojo").hide();
                              </div>
 
 
+<?php
+if($validadia!='no' && $validahora!='no'){
+  echo'  <center>   <input   type="submit"  value="ENVIAR PEDIDO" onclick="goValidaciones()" class="btn btn-primary btn-lg" /></center>
+';
+}else{
+  echo'<br>';
+  
+}
 
-                          <center>   <input   type="submit"  value='ENVIAR PEDIDO' onclick="goValidaciones()" class="btn btn-primary btn-lg" /></center>
+?>
 
 </div>
                         </div>
